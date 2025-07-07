@@ -1,10 +1,10 @@
 <template>
-  <panel-unit title="图层">
-    <a-button :disabled="props.layers.length == 0" @click="showLayers">打开图层设置</a-button>
+  <panel-unit title="Layers">
+    <a-button :disabled="props.layers.length == 0" @click="showLayers">Open layer settings</a-button>
   </panel-unit>
   <a-modal
     v-model:visible="layersShown"
-    title="图层设置"
+    title="Layer settings"
     centered
     width="1000px">
     <a-row type="flex" :gutter="[8, 8]">
@@ -20,18 +20,18 @@
               :style="{ width: '6em' }"
               @change="guessLayerSide(layer)" />
             <a-radio-group v-if="hasSide(layer.type)" v-model:value="layer.side">
-              <a-radio-button value="top">顶层</a-radio-button>
-              <a-radio-button value="bottom">底层</a-radio-button>
-              <a-radio-button v-if="layer.type == 'copper'" value="inner">内层</a-radio-button>
+              <a-radio-button value="top">Top</a-radio-button>
+              <a-radio-button value="bottom">Bottom</a-radio-button>
+              <a-radio-button v-if="layer.type == 'copper'" value="inner">inner layer</a-radio-button>
             </a-radio-group>
           </a-space>
         </a-col>
       </template>
     </a-row>
     <template #footer>
-      <a-button type="default" @click="restoreLayers">恢复默认</a-button>
-      <a-button type="default" @click="closeLayers">关闭</a-button>
-      <a-button type="primary" @click="saveLayers">确定</a-button>
+      <a-button type="default" @click="restoreLayers">Restore default</a-button>
+      <a-button type="default" @click="closeLayers">Close Layers</a-button>
+      <a-button type="primary" @click="saveLayers">Save Layers</a-button>
     </template>
   </a-modal>
 </template>
@@ -78,13 +78,13 @@ function restoreLayers(): void {
 }
 
 const gerberTypes: SelectProps['options'] = [
-  { value: 'copper', label: '线路' },
-  { value: 'soldermask', label: '阻焊' },
-  { value: 'silkscreen', label: '丝印' },
-  { value: 'solderpaste', label: '钢网' },
-  { value: 'drill', label: '钻孔' },
-  { value: 'outline', label: '轮廓' },
-  { value: null, label: '忽略' },
+  { value: 'copper', label: 'Copper' },
+  { value: 'soldermask', label: 'Soldermask' },
+  { value: 'silkscreen', label: 'Silkscreen' },
+  { value: 'solderpaste', label: 'Solderpaste' },
+  { value: 'drill', label: 'Drill' },
+  { value: 'outline', label: 'Outline' },
+  { value: null, label: 'Omit' },
 ];
 
 function hasSide(type: GerberType | undefined): boolean {
