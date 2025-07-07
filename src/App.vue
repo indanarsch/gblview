@@ -3,11 +3,6 @@
     <template #extra>
       <a-row :gutter="[8]">
         <a-col>
-          <a-button type="link" href="https://github.com/xingrz/GerberViewer" target="_blank">
-            Fork me on GitHub
-          </a-button>
-        </a-col>
-        <a-col>
           <a-upload
             :custom-request="loadGerber"
             :show-upload-list="false"
