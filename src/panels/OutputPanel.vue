@@ -1,6 +1,6 @@
 <template>
-  <panel-unit title="输出选项">
-    <a-form-item label="格式">
+  <panel-unit title="Output options">
+    <a-form-item label="Format">
       <a-row type="flex" :gutter="[8]">
         <a-col>
           <a-radio-group v-model:value="format">
@@ -10,22 +10,22 @@
         </a-col>
       </a-row>
     </a-form-item>
-    <a-form-item label="分层">
+    <a-form-item label="layered">
       <a-row type="flex" :gutter="[8]">
         <a-col>
           <a-checkbox v-model:checked="layers">
-            输出分层文件
+            Output layered file
           </a-checkbox>
         </a-col>
       </a-row>
     </a-form-item>
-    <a-form-item label="浮雕">
+    <a-form-item label="relief">
       <a-row type="flex" :gutter="[8]">
         <a-col>
           <a-checkbox v-model:checked="relief">
-            输出浮雕材质
+            Export relief texture
           </a-checkbox>
-          <a-tooltip placement="right" title="可用于 Fusion 360 等 3D 软件用作浮雕材质贴图">
+          <a-tooltip placement="right" title="Can be used as relief texture map in 3D software such as Fusion 360">
             <info-circle-outlined />
           </a-tooltip>
         </a-col>
@@ -37,7 +37,7 @@
         :disabled="!props.gerber || props.layers.length == 0"
         :loading="rendering"
         @click="output">
-        输出文件
+        output file
       </a-button>
     </div>
   </panel-unit>
