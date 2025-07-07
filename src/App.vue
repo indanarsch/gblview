@@ -12,18 +12,18 @@
             :custom-request="loadGerber"
             :show-upload-list="false"
             accept=".zip,application/zip">
-            <a-button type="primary" :loading="loading">打开 Gerber 文件</a-button>
+            <a-button type="primary" :loading="loading">Open Gerber</a-button>
           </a-upload>
         </a-col>
       </a-row>
     </template>
-    <a-tab-pane key="options" tab="选项">
+    <a-tab-pane key="options" tab="Options">
       <x-panel>
         <render-panel v-model:render="render" />
         <layers-panel v-model:layers="layers" />
       </x-panel>
     </a-tab-pane>
-    <a-tab-pane key="output" tab="输出">
+    <a-tab-pane key="output" tab="Output">
       <output-panel :gerber="gerber" :layers="layers" :render="render" />
     </a-tab-pane>
   </x-panel-container>
