@@ -1,45 +1,45 @@
 <template>
-  <panel-unit title="渲染">
-    <a-form-item label="显示">
+  <panel-unit title="rendering">
+    <a-form-item label="show">
       <a-row type="flex" :gutter="[8]">
         <a-col>
           <a-radio-group v-model:value="render.side">
-            <a-radio-button value="top">顶层</a-radio-button>
-            <a-radio-button value="bottom">底层</a-radio-button>
+            <a-radio-button value="top">Top</a-radio-button>
+            <a-radio-button value="bottom">Bottom</a-radio-button>
           </a-radio-group>
         </a-col>
       </a-row>
     </a-form-item>
-    <a-form-item label="阻焊">
+    <a-form-item label="solder mask">
       <a-row type="flex" :gutter="[8, 8]">
         <a-col>
           <a-select v-model:value="render.sm" :style="{ width: '10em' }">
-            <a-select-option value="green">绿色</a-select-option>
-            <a-select-option value="red">红色</a-select-option>
-            <a-select-option value="yellow">黄色</a-select-option>
-            <a-select-option value="blue">蓝色</a-select-option>
-            <a-select-option value="white">白色</a-select-option>
-            <a-select-option value="black">黑色</a-select-option>
-            <a-select-option value="purple">紫色</a-select-option>
+            <a-select-option value="green">Green</a-select-option>
+            <a-select-option value="red">Red</a-select-option>
+            <a-select-option value="yellow">Yellow</a-select-option>
+            <a-select-option value="blue">Blue</a-select-option>
+            <a-select-option value="white">White</a-select-option>
+            <a-select-option value="black">Black</a-select-option>
+            <a-select-option value="purple">Purple</a-select-option>
           </a-select>
         </a-col>
       </a-row>
     </a-form-item>
-    <a-form-item label="裸铜">
+    <a-form-item label="bare copper">
       <a-row type="flex" :gutter="[8]">
         <a-col>
           <a-radio-group v-model:value="render.cf">
-            <a-radio-button value="tin">喷锡</a-radio-button>
-            <a-radio-button value="gold">沉金</a-radio-button>
+            <a-radio-button value="tin">Tin</a-radio-button>
+            <a-radio-button value="gold">Gold</a-radio-button>
           </a-radio-group>
         </a-col>
       </a-row>
     </a-form-item>
-    <a-form-item label="焊盘">
+    <a-form-item label="Pad">
       <a-row type="flex" :gutter="[8]">
         <a-col>
           <a-checkbox v-model:checked="render.sp">
-            绘制锡膏
+            Draw solder paste
           </a-checkbox>
         </a-col>
       </a-row>
